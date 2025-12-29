@@ -1,19 +1,26 @@
 class Numr < Formula
   desc "Text calculator for natural language expressions with a vim-style TUI"
   homepage "https://github.com/nasedkinpv/numr"
-  url "https://github.com/nasedkinpv/numr/archive/v0.3.1.tar.gz"
-  sha256 "b24929376c47da09dc0aba6496db4fa64f9eff51b2cbc5acd1f08a45aee5ef28"
+  version "0.4.0-rc3"
   license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/nasedkinpv/numr/releases/download/v#{version}/numr-v#{version}-aarch64-apple-darwin.tar.gz"
+      sha256 "2a9420f0e823e2e32bdc6f47a85663eefa56b476b04793b92e98336b5092cf36"
+    end
+    on_intel do
+      url "https://github.com/nasedkinpv/numr/releases/download/v#{version}/numr-v#{version}-x86_64-apple-darwin.tar.gz"
+      sha256 "f8564cce51afa026e988a7d92d02456dd2d02ac68a986d220bc3f142a6a26d70"
+    end
+  end
 
   def install
-    system "cargo", "build", "--release", "--locked"
-    bin.install "target/release/numr"
-    bin.install "target/release/numr-cli"
+    bin.install "numr"
+    bin.install "numr-cli"
   end
 
   test do
-    assert_equal "30", shell_output("#{bin}/numr-cli '20% of 150'").strip
+    assert_match "30", shell_output("#{bin}/numr-cli '20% of 150'").strip
   end
 end

@@ -1,17 +1,17 @@
 class Numr < Formula
   desc "Text calculator for natural language expressions with a vim-style TUI"
   homepage "https://github.com/nasedkinpv/numr"
-  version "0.5.1"
+  version "0.5.2"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/nasedkinpv/numr/releases/download/v#{version}/numr-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "715557f018301905ac1ccd25e55188b5f3c4751fd9b48b9f014754da6025fa11"
+      sha256 "585aca7d2383776ac16e4bb0a1479d2ac49a73fe5405810c542659d9b7411d69"
     end
     on_intel do
       url "https://github.com/nasedkinpv/numr/releases/download/v#{version}/numr-v#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "1d1c289c05c23a0fdb3d9f5f3c32921ea0ea6ae77beee125bf22feaf6578e56d"
+      sha256 "d2458aa39cf82861132724632d328c1b6404aae94695629d43f78297f9faa64f"
     end
   end
 

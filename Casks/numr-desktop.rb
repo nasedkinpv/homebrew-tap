@@ -1,9 +1,9 @@
 cask "numr-desktop" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.9.1"
-  sha256 arm:   "949755eb00ea09fbbe9ee3329ec28c82e0d393b62938ef53ce144054c3fee830",
-         intel: "daf0252213c7433f25f41c93f8302f532e1a85d80cadd67b313d051010ad2c24"
+  version "0.9.2"
+  sha256 arm:   "160bd299d31d28f37171b8fdd7a6a98c30ada66dc9b34fcfe09581d3a19d6b24",
+         intel: "cbc467266fefae80e9aa6970fc984a8bc1eeea3c4eb66b569e6b9a814b98a5cb"
 
   url "https://github.com/nasedkinpv/numr-desktop/releases/download/v#{version}/numr_#{version}_#{arch}.dmg"
   name "numr"
